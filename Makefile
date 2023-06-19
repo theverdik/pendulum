@@ -23,8 +23,8 @@ SRC         = $(call rwildcard, src, *.c)
 OBJ_DEB     = $(patsubst src/%.c, $(OBJ_DEB_DIR)/%.o.d, $(SRC))
 OBJ_REL     = $(patsubst src/%.c, $(OBJ_REL_DIR)/%.o,   $(SRC))
 
-EXE_REL = build/release/dp
-EXE_DEB = build/debug/dp
+EXE_REL = build/release/pendulum
+EXE_DEB = build/debug/pendulum
 
 .PHONY: debug release clean run deps cleandeps
 

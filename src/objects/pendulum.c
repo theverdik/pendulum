@@ -43,13 +43,14 @@ void pendulum_update(Pendulum *pendulum)
 	if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
 		Vector2 mouse_pos = math_vec2_sub(GetMousePosition(), SCREEN_OFFSET);
 
-		if (CheckCollisionPointCircle(mouse_pos, pendulum_get_rod_end(pendulum), pendulum->weight->radius) || pendulum->hold)
+		if (CheckCollisionPointCircle(mouse_pos, pendulum_get_rod_end(pendulum), pendulum->weight->radius) || pendulum->hold) {
 			pendulum->hold = true;
 
-		pendulum->angle = -fmod(atan2f(mouse_pos.y, mouse_pos.x) - 2.0f * PI / 4.0f, 2.0f * PI);
+			pendulum->angle = -fmod(atan2f(mouse_pos.y, mouse_pos.x) - 2.0f * PI / 4.0f, 2.0f * PI);
 
-		pendulum->angular_vel = 0.0f;
-		pendulum->angular_acc = 0.0f;
+			pendulum->angular_vel = 0.0f;
+			pendulum->angular_acc = 0.0f;
+		}
 	}
 	else
 		pendulum->hold = false;
