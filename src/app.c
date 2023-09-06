@@ -33,7 +33,7 @@ void app_run(void)
 
 	const double delta_time = 1.0 / 100.0;
 
-	list_add(app->pendulums, pendulum_create((Vector2){0.0f, 0.0f}, 150.0f, PI / 2, 100.0f, WHITE));
+	list_add(app->pendulums, pendulum_create((Vector2){0.0f, 0.0f}, 1.5f * METER, PI / 2, 1.0f, WHITE));
 
 	double currentTime = GetTime();
 	double newTime;

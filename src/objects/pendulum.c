@@ -9,7 +9,7 @@
 
 #define FONT_SIZE 30
 #define RADIUS 15.0f
-#define G (9.81f / 65.0f)
+#define G ((float)(9.81f) * METER)
 
 static Vector2 pendulum_get_rod_end(Pendulum *pendulum);
 
@@ -65,9 +65,9 @@ void pendulum_tick(Pendulum *pendulum)
 
 	// pendulum->angular_vel *= 0.999f;
 
-	pendulum->angular_vel += pendulum->angular_acc;
+	pendulum->angular_vel += pendulum->angular_acc * DELTA_TIME;
 
-	pendulum->angle += pendulum->angular_vel;
+	pendulum->angle += pendulum->angular_vel * DELTA_TIME;
 }
 
 void pendulum_render(Pendulum *pendulum)
